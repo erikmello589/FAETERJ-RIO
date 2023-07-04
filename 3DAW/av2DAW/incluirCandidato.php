@@ -25,10 +25,10 @@ $sql = "INSERT INTO candidatos (nome, rg, cpf, email, cargo) VALUES ('$nome', '$
 
 if ($conn->query($sql) === TRUE) 
 {
-    $response = array('success' => true, 'message' => 'Pergunta de texto criada com sucesso');
+    $response = array('success' => true, 'message' => 'Candidato Adcionado Com sucesso');
 } 
 else {
-    $response = array('success' => false, 'message' => 'Erro ao criar pergunta de texto');
+    $response = array('success' => false, 'message' => 'Candidato NÃO adcionado');
 }
 
 // Fecha a conexão com o banco de dados

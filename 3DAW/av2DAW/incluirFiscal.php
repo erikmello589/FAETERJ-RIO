@@ -19,7 +19,7 @@ $cpf = $data['cpf'];
 $cargo = $data['cargo'];
 
 // Insere a pergunta no banco de dados
-$sql = "INSERT INTO candidatos (nome, cpf, cargo) VALUES ('$nome', '$cpf', '$cargo')";
+$sql = "INSERT INTO fiscais (nome, cpf, cargo) VALUES ('$nome', '$cpf', '$cargo')";
 
 if ($conn->query($sql) === TRUE) 
 {
