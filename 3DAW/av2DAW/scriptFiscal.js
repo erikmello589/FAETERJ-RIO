@@ -269,3 +269,34 @@ function validaNome (itemNome)
   return;
 }
 
+async function enviarRequisicao(url, metodo, dados) {
+  try {
+    const response = await fetch(url, {
+      method: metodo,
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(dados)
+    });
+    return await response.json();
+  } catch (error) {
+    return console.error('Erro:', error);
+  }
+}
+
+// Função para criar um candidato
+function enviaFiscal () {
+
+  const nome = document.getElementById('nome').value;
+  const cpf = document.getElementById('cpf').value;
+  const cargo = document.getElementById('cargo').value;
+
+  const dados = {
+      nome: nome,
+      cpf: cpf,
+      cargo: cargo
+  };
+
+  enviarRequisicao('incluirFiscal.php', 'POST', dados)
+      .then(response => console.log(response));
+}

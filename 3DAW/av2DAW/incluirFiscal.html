@@ -16,7 +16,7 @@
         <form>
   
             <label for="name" class="text">Nome<b>*</b>:</label>
-            <input type="text" size="55" id="name" name="name" onblur="validaNome(this)" pattern=".{4,}" title="No mínimo 4 caracteres" placeholder="Ex: Erik Mello Guedes" required>
+            <input type="text" size="55" id="nome" name="name" onblur="validaNome(this)" pattern=".{4,}" title="No mínimo 4 caracteres" placeholder="Ex: Erik Mello Guedes" required>
             
             <br>
 
@@ -36,7 +36,7 @@
 
             <p><b>*</b>Campos obrigatórios.</p>
 
-            <button type="submit" id="botao" class="button2" value="Enviar Dados" onclick="EnviaFiscal()">Enviar Dados</button>
+            <button type="button" id="botao" class="button2" value="Enviar Dados" onclick="enviaFiscal()">Enviar Dados</button>
   
         </form>
         </div>
