@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="scriptCandidato.js"></script>
+    <title>AV2 - 3POB</title>
+</head>
+<body>
+
+    <table>
+
+        <div class="container">
+        <form>
+  
+            <label for="name" class="text">Nome<b>*</b>:</label>
+            <input type="text" size="55" id="nome" name="nome" onblur="validaNome(this)" pattern=".{4,}" title="No mínimo 4 caracteres" placeholder="Ex: Erik Mello Guedes" required>
+            
+            <br>
+
+            <label for="RG" class="text">RG<b>*</b></label>
+            <input class="align" type="tel" size="13" id="rg" name="rg" oninput="mascaraRg(this)" pattern=".{12,}" title="No mínimo 9 caracteres" placeholder="Ex: 12.345.678-9" required>
+
+            <label for="CPF">CPF<b>*</b>:</label>
+            <input type="text" style="margin-left: 90px;" size="13" id="cpf" name="cpf" oninput="mascaraCpf(this)" onblur="validaCpf(this)" pattern=".{14,}" title="No mínimo 11 caracteres" placeholder="Ex: 123.456.789-00" required>
+
+            <br>
+
+            <label for="email" class="text">E-mail<b>*</b>:</label>
+            <input type="email" size="13" id="email" name="email" placeholder="Ex: andreneves@gmail.com" required>
+
+            <br>
+
+            <label for="cargo" class="text">Cargo Pretendido<b>*</b>:</label>
+            <select id="cargo" class="align">
+                <option value="professor">Professor</option>
+                <option value="diretor">Diretor</option>
+                <option value="assistente">Assistente ADM</option>
+                <option value="gerente">Gerente ADM</option>
+                <option value="secretario">Secretario</option>
+            </select>
+
+            <p><b>*</b>Campos obrigatórios.</p>
+
+            <button type="button" id="botao" class="button2" value="Enviar Dados" onclick="enviaCandidato()">Enviar Dados</button>
+            <button type="button" class="button"  onclick="listarCandidatosNome()" value="Listar Alunos por Nome">Listar Alunos por Nome</button>
+            <button type="button" class="button"  onclick="listarCandidatosSala()" value="Listar Alunos por Sala">Listar Alunos por Sala</button>
+  
+        </form>
+        </div>
+    </table>
+
+    <table border="1" id="tabela">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>RG</th>
+                <th>CPF</th>
+                <th>Email</th>
+                <th>Cargo Pretendido</th>
+                </tr>
+        </thead>
+         
+        <tbody id="tbody"></tbody>
+        
+    </table>
+
+</body>
+</html>

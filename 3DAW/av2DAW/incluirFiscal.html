@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="scriptFiscal.js"></script>
+    <title>AV2 - 3POB</title>
+</head>
+<body>
+
+    <table>
+
+        <div class="container">
+        <form>
+  
+            <label for="name" class="text">Nome<b>*</b>:</label>
+            <input type="text" size="55" id="name" name="name" onblur="validaNome(this)" pattern=".{4,}" title="No mínimo 4 caracteres" placeholder="Ex: Erik Mello Guedes" required>
+            
+            <br>
+
+            <label for="CPF">CPF<b>*</b>:</label>
+            <input type="text" style="margin-left: 90px;" size="13" id="cpf" name="cpf" oninput="mascaraCpf(this)" onblur="validaCpf(this)" pattern=".{14,}" title="No mínimo 11 caracteres" placeholder="Ex: 123.456.789-00" required>
+
+            <br>
+
+            <label for="cargo" class="text">Sala de Aplicação<b>*</b>:</label>
+            <select id="cargo" class="align">
+                <option value="professor">Professor</option>
+                <option value="diretor">Diretor</option>
+                <option value="assistente">Assistente ADM</option>
+                <option value="gerente">Gerente ADM</option>
+                <option value="secretario">Secretario</option>
+            </select>
+
+            <p><b>*</b>Campos obrigatórios.</p>
+
+            <button type="submit" id="botao" class="button2" value="Enviar Dados" onclick="EnviaFiscal()">Enviar Dados</button>
+  
+        </form>
+        </div>
+    </table>
+
+</body>
+</html>
